@@ -38,6 +38,16 @@ public class Demo {
       }
     }
 
+    //Formulae
+    logger.info("Running Formula Demo");
+    try (InputStream is = Demo.class.getResourceAsStream("/formula_template.xlsx")) {
+      try (OutputStream os = Files.newOutputStream(outputDir.resolve("formula_output.xlsx" ))) {
+        Context context = new Context();
+        context.putVar("employees", employees);
+        JxlsHelper.getInstance().processTemplate(is, os, context);
+      }
+    }
+
     //Grouping
     logger.info("Running Grouping Demo");
     try (InputStream is = Demo.class.getResourceAsStream("/grouping_template.xlsx")) {
