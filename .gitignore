@@ -3,6 +3,9 @@ build/
 out/
 logs/
 
+# Application output
+output/
+
 # IDEA project files
 *.iml
 .idea/compiler.xml
